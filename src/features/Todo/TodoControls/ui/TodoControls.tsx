@@ -1,12 +1,11 @@
+import { useTaskList } from '@/entities/task';
+import { pluralize } from '@/shared/lib';
 import {
   Button,
   CardActions,
   ToggleButton,
   ToggleButtonGroup,
 } from '@mui/material';
-
-import { useTaskList } from '@entities/task';
-import { pluralize } from '@shared/lib';
 
 export const TodoControls = ({
   amountCompleted,
@@ -33,7 +32,7 @@ export const TodoControls = ({
 
   return (
     <CardActions className='flex items-center justify-between border-t-2'>
-      <div className='p-2'>
+      <div className='p-2' data-testid='todo-amount'>
         {amountCompleted +
           pluralize(amountCompleted, ' задача ', ' задачи ', ' задач ')}
         осталось
@@ -45,11 +44,11 @@ export const TodoControls = ({
         aria-label='text alignment'
         size='small'
       >
-        <ToggleButton value='all'>Все</ToggleButton>
-        <ToggleButton value='active'>Активные</ToggleButton>
-        <ToggleButton value='completed'>Выполненные</ToggleButton>
+        <ToggleButton value='all' data-testid='todo-filter-all'>Все</ToggleButton>
+        <ToggleButton value='active' data-testid='todo-filter-active'>Активные</ToggleButton>
+        <ToggleButton value='completed' data-testid='todo-filter-completed'>Выполненные</ToggleButton>
       </ToggleButtonGroup>
-      <Button size='medium' onClick={handleClearCompleted}>
+      <Button size='medium' onClick={handleClearCompleted} data-testid='todo-clear-completed'>
         Удалить выполненные
       </Button>
     </CardActions>

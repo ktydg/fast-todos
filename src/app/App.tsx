@@ -1,4 +1,4 @@
-import { TodoCard } from '@widget/Todo'
+import { TodoCard } from '@/widget/Todo'
 
 function App() {
 	return (

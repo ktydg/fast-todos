@@ -1,9 +1,8 @@
-import type { ITask } from '@entities/task';
+import type { ITask } from '@/entities/task';
 
+import { useTaskList } from '@/entities/task';
+import { cn } from '@/shared/lib';
 import { CardContent, Checkbox } from '@mui/material';
-
-import { useTaskList } from '@entities/task';
-import { cn } from '@shared/lib';
 
 export const TodoList = ({ filter }: { filter: string }) => {
   const { taskList, setTaskList } = useTaskList();
@@ -32,7 +31,7 @@ export const TodoList = ({ filter }: { filter: string }) => {
 
   return (
     <CardContent className='flex h-[400px] max-h-[400px] flex-col gap-2 overflow-scroll p-4'>
-      <div className='flex flex-col'>
+      <div className='flex flex-col' data-testid='todo-list'>
         {filteredTaskList?.map((task: ITask) => (
           <div
             key={task.id}

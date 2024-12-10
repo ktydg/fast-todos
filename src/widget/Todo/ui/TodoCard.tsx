@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
+import { useTaskList } from '@/entities/task';
+import { TodoAdd } from '@/features/Todo/TodoAdd';
+import { TodoControls } from '@/features/Todo/TodoControls';
+import { TodoList } from '@/features/Todo/TodoList';
 import { Card } from '@mui/material';
-
-import { useTaskList } from '@entities/task';
-import { TodoAdd } from '@features/Todo/TodoAdd';
-import { TodoControls } from '@features/Todo/TodoControls';
-import { TodoList } from '@features/Todo/TodoList';
 
 export const TodoCard = () => {
   const { taskList } = useTaskList();

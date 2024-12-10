@@ -1,8 +1,7 @@
 import { useState } from 'react';
 
+import { useTaskList } from '@/entities/task';
 import { Button, TextField } from '@mui/material';
-
-import { useTaskList } from '@entities/task';
 
 export const TodoAdd = () => {
   const { taskList, setTaskList } = useTaskList();
