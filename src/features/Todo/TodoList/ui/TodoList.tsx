@@ -30,7 +30,7 @@ export const TodoList = ({ filter }: { filter: string }) => {
   });
 
   return (
-    <CardContent className='flex h-[400px] max-h-[400px] flex-col gap-2 overflow-scroll p-4'>
+    <CardContent className='flex h-[400px] max-h-[400px] flex-col gap-2 overflow-auto p-4'>
       <div className='flex flex-col' data-testid='todo-list'>
         {filteredTaskList?.map((task: ITask) => (
           <div
@@ -46,7 +46,7 @@ export const TodoList = ({ filter }: { filter: string }) => {
             />
             <label
               className={cn(
-                'flex h-full grow overflow-scroll py-3 text-2xl',
+                'flex h-full grow overflow-auto py-3 text-2xl',
                 task.completed ? 'text-gray-500 line-through' : undefined,
               )}
             >
